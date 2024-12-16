@@ -49,7 +49,7 @@ a {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  font-family: var(--maintFont);
+  font-family: var(--mainFont);
   z-index: 50;
   /* border: 2px solid orange; */
 }
@@ -132,7 +132,7 @@ a {
   position: absolute;
   inset: 0;
   padding: 7.55rem 1.5rem;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   /* z-index: 5; */
 }
 
@@ -178,7 +178,7 @@ a {
 .logo-select-input {
   /* width: 100px; */
   /* height: 30px; */
-  border: 2px solid red;
+  /* border: 2px solid red; */
   color: white;
   display: flex;
   align-items: center;
@@ -191,6 +191,11 @@ a {
   border-radius: 0.5rem;
   text-transform: capitalize;
   font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.logo-select-input:hover {
+  background: linear-gradient(to right, lightgray, white);
 }
 
 .curr-icon-img {
@@ -201,7 +206,7 @@ a {
 }
 
 .logo-select-list {
-  border: 4px solid orange;
+  /* border: 4px solid orange; */
   border-radius: 0.5rem;
   transform-origin: top;
   overflow: hidden;
@@ -213,15 +218,6 @@ a {
 .hide-select-list {
   transform: scaleY(0);
 }
-
-.select-logo-item {
-}
-
-/* #logo-select {
-  width: 100px;
-  height: 30px;
-  border: 2px solid green;
-} */
 
 .select-logo-item {
   /* border: 1px solid white; */
@@ -248,9 +244,9 @@ a {
   filter: blur(65px);
 }
 
-.logo-select {
+/* .logo-select {
   border: 3px solid pink;
-}
+} */
 
 .select-logo-item-img {
   height: 40px;
@@ -301,8 +297,8 @@ a {
   left: 1rem;
   overflow: hidden;
   border-radius: 50%;
-  border: 4px solid var(--memphisblue);
-  box-shadow: 5px 10px 25px var(--memphisblue);
+  border: 4px solid var(--selectedshade);
+  box-shadow: 5px 10px 25px var(--selectedshade);
   z-index: 5;
   animation: fadein 2s 1s forwards;
   filter: blur(100px);
@@ -330,7 +326,7 @@ a {
 .player-frame {
   height: 100%;
   width: 100%;
-  border: 2px solid var(--memphisblue);
+  border: 2px solid var(--selectedshade);
   position: relative;
   display: flex;
   align-items: center;
@@ -398,7 +394,7 @@ a {
 
 .card-brand::after {
   content: "";
-  background: var(--memphisblue);
+  background: var(--selectedshade);
   position: absolute;
   inset: 0;
   opacity: 65%;
@@ -425,8 +421,8 @@ a {
 
 .name-placard {
   position: absolute;
-  background: var(--memphisblue);
-  border: 2.5px solid darkblue;
+  background: var(--selectedshade);
+  border: 2.5px solid var(--selectedshade);
   /* height: 50px;
   width: 100px; */
   right: 1rem;
@@ -457,13 +453,14 @@ a {
   min-height: 50px;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   gap: 2rem;
   z-index: 5;
 }
 
-.upload-label-btn {
+.upload-label-btn,
+.download-btn {
   position: relative;
   width: 100px;
   height: 50px;
@@ -475,6 +472,16 @@ a {
   transition: 0.25s;
   font-weight: 700;
   cursor: pointer;
+}
+
+.download-btn {
+  border: none;
+  background: transparent;
+}
+
+.download-btn p {
+  position: relative;
+  z-index: 5;
 }
 
 /* label {
@@ -491,7 +498,8 @@ a {
   border: 6px solid red;
 } */
 
-label::after {
+label::after,
+.download-btn::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -506,7 +514,8 @@ input[type="file"] {
   cursor: pointer;
 }
 
-.upload-label-btn:hover {
+.upload-label-btn:hover,
+.download-btn:hover {
   box-shadow: 2px 4px 5px black;
   transform: scale(1.05, 1);
 }
