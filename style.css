@@ -40,6 +40,10 @@ a {
   opacity: 45%;
 }
 
+header {
+  text-align: center;
+}
+
 .app-content {
   height: 100%;
   width: 100%;
@@ -52,6 +56,27 @@ a {
   font-family: var(--mainFont);
   z-index: 50;
   /* border: 2px solid orange; */
+}
+
+header {
+  margin: 2rem 0;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  position: relative;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--selectedshade);
+  filter: blur(5px);
+}
+
+header * {
+  position: relative;
+  z-index: 5;
+  text-shadow: 0px 1px 5px white;
 }
 
 .actions-menu {

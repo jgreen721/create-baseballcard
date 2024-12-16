@@ -18,6 +18,10 @@
   <body>
     <div class="app">
       <div class="app-content">
+        <header>
+          <h2>Create Baseball Card</h2>
+          <small>Click Name to change PlayersName</small>
+        </header>
         <button onclick="toggleActionMenu()" class="action-menu-btn">
           <i class="fa-solid fa-palette pallett-icon"></i>
           <i class="fa-solid fa-palette pallett-shadow"></i>
@@ -84,7 +88,7 @@
             <h5 class="card-brand-h5">Topps</h5>
           </div>
           <div class="name-placard-shell">
-            <div class="name-placard">
+            <div onclick="handleNameChange()" class="name-placard">
               <h4 class="playername-h3" id="playername">Owen McBride</h4>
             </div>
           </div>
@@ -215,6 +219,11 @@
           toggleActionMenu();
         }
       };
+
+      function handleNameChange() {
+        let newName = prompt("Player name?");
+        document.querySelector("#playername").innerHTML = newName;
+      }
     </script>
   </body>
 </html>
