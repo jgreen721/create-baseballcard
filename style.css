@@ -28,6 +28,7 @@ a {
   width: 100vw;
   max-width: 85rem;
   position: relative;
+  overflow: hidden;
   background: radial-gradient(black, var(--selectedshade), black);
 }
 
@@ -427,11 +428,13 @@ header * {
 }
 
 .card-brand-h5 {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   z-index: 5;
   position: relative;
   color: white;
   font-family: var(--toppsFont);
+  font-family: var(--mainFont);
+  font-weight: 200;
 }
 
 .name-placard-shell {
